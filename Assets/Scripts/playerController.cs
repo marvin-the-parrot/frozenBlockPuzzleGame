@@ -18,10 +18,11 @@ public class playerController : MonoBehaviour {
     private void Update() {
         // Read input
         float moveZ = Input.GetAxis("Vertical");
+        float moveY = Input.GetAxis("Horizontal");
         float mouseX = Input.GetAxis("Mouse X");
 
         // Calculate movement input
-        movementInput = new Vector3(0f,0f,moveZ);
+        movementInput = new Vector3(moveY,0f,moveZ);
 
         turnInput = mouseX;
     }

@@ -19,13 +19,22 @@ public class targeting : MonoBehaviour
         Camera playerCamera = Camera.main;
         Ray pointerRay = playerCamera.ScreenPointToRay(new Vector3((playerCamera.pixelWidth-1)/2,(playerCamera.pixelHeight-1)/2,0f));
         Debug.DrawRay(pointerRay.origin, pointerRay.direction * rayLength, Color.red);
-        if (Physics.Raycast(pointerRay, out hit, 1000 ))
-            {
-                Debug.Log(hit.collider.gameObject.name);
-                Debug.Log("Did Hit");
-            }
-        else {
-                Debug.Log("Did not Hit");
+
+        if (Input.GetButtonDown("Fire1")) {
+            if (Physics.Raycast(pointerRay, out hit, 1000 ))
+                {
+                    Debug.Log(hit.collider.gameObject.name);
+                    Debug.Log("Did Hit");
+                    ExecuteFunctionOnGameObject(hit.collider.gameObject,"unfreeze");
+            } else {
+                    Debug.Log("Did not Hit");
             }
         }
+    }
+
+    public void ExecuteFunctionOnGameObject(GameObject targetObject,string functionName) {
+        targetObject.SendMessage(functionName);
+    }
+
+
 }

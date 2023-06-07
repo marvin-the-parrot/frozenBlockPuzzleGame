@@ -23,29 +23,39 @@ public class targeting : MonoBehaviour
         Debug.DrawRay(pointerRay.origin, pointerRay.direction * rayLength, Color.red);
 
         if (Physics.Raycast(pointerRay, out hit, rayLength)) {
-            if (hit.collider.gameObject != outlinedObject) {
-                if (outlinedObject != null) {
-                    Outline outlinedObjectOutline = outlinedObject.GetComponent<Outline>();
-                    if (outlinedObjectOutline != null) {
-                        outlinedObjectOutline.enabled = false;
-                    }
-                }
+            GameObject hitObject = hit.collider.gameObject;
 
-                GameObject hitObject = hit.collider.gameObject;
-                if (hitObject != null) {
+            if (hitObject.CompareTag("interactable")) {
+                if (hitObject != outlinedObject) {
+                    if (outlinedObject != null) {
+                        Outline outlinedObjectOutline = outlinedObject.GetComponent<Outline>();
+                        if (outlinedObjectOutline != null) {
+                            outlinedObjectOutline.enabled = false;
+                        }
+                    }
+
                     Outline hitObjectOutline = hitObject.GetComponent<Outline>();
                     if (hitObjectOutline != null) {
                         hitObjectOutline.enabled = true;
                     }
+
                     outlinedObject = hitObject;
                     ExecuteFunctionOnGameObject(hitObject, "outline");
                 }
-            }
 
-            if (Input.GetButtonDown("Fire1")) {
-                ExecuteFunctionOnGameObject(hit.collider.gameObject, "unfreeze");
+                if (Input.GetButtonDown("Fire1")) {
+                    ExecuteFunctionOnGameObject(hitObject, "unfreeze");
+                }
             }
         } else {
+            if (outlinedObject != null) {
+                Outline outlinedObjectOutline = outlinedObject.GetComponent<Outline>();
+                if (outlinedObjectOutline != null) {
+                    outlinedObjectOutline.enabled = false;
+                }
+                outlinedObject = null;
+            }
+
             Debug.Log("Did not Hit");
         }
     }

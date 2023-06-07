@@ -6,11 +6,18 @@ public class storedMovement : MonoBehaviour
 {
     public Vector3 momentum;
     private Rigidbody rb;
-
+    private Outline outlineObject;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        // Create Outline and disable it until needed
+        outlineObject = gameObject.AddComponent<Outline>();
+        outlineObject.OutlineMode = Outline.Mode.OutlineAll;
+        outlineObject.OutlineColor = Color.yellow;
+        outlineObject.OutlineWidth = 5f;
+        outlineObject.enabled = false;
     }
 
     // Update is called once per frame
@@ -21,7 +28,18 @@ public class storedMovement : MonoBehaviour
     }
 
     public void unfreeze() {
-        Debug.Log("Unfreezing");
+
         rb.velocity = momentum;
     }
+
+    public void outline() {
+        
+        if (outlineObject == null) {
+            return;
+        }
+        outlineObject.enabled = true;
+        
+    }
 }
+
+    

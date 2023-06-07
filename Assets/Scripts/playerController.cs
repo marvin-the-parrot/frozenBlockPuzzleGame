@@ -14,7 +14,7 @@ public class playerController : MonoBehaviour {
 
     private Rigidbody rb;
     private Vector3 movementInput;
-    private float turnInput;
+    private float lookX;
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
@@ -33,7 +33,7 @@ public class playerController : MonoBehaviour {
         // Calculate movement input
         movementInput = new Vector3(moveY,0f,moveZ);
 
-        turnInput = mouseX;
+        lookX = mouseX;
     }
 
     private void Jump() {
@@ -67,7 +67,7 @@ public class playerController : MonoBehaviour {
 
     private void TurnPlayer() {
         // Calculate rotation
-        Quaternion rotation = Quaternion.Euler(0f, turnInput * rotationSpeed, 0f);
+        Quaternion rotation = Quaternion.Euler(0f, lookX * rotationSpeed, 0f);
 
         // Apply rotation to the rigidbody
         rb.MoveRotation(rb.rotation * rotation);

@@ -20,23 +20,32 @@ public class storedMovement : MonoBehaviour
         outlineObject.enabled = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    private void OnCollisionEnter(Collision collision) {
+        // Collision with other cube
+        // TODO: transfere momentum to other cube maybe
+        if (collision.gameObject.CompareTag("interactable")) {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
 
-        
+            rb.isKinematic = true;
+        }
+
+        // Collision with wall, wall absorbs all momentum
+        if (collision.gameObject.CompareTag("Wall")) {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+
+            rb.isKinematic = true;
+        }
     }
 
     public void unfreeze() {
-
+        rb.isKinematic = false;
         rb.velocity = momentum;
     }
 
     public void outline() {
         
-        if (outlineObject == null) {
-            return;
-        }
         outlineObject.enabled = true;
         
     }

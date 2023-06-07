@@ -43,7 +43,7 @@ public class playerController : MonoBehaviour {
     }
 
     private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.CompareTag("Ground")) {
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("interactable") || collision.gameObject.CompareTag("Wall")) {
             isJumping = false;
         }
     }

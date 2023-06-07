@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 212602888}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1123,6 +1123,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1921670711}
     m_Modifications:
+    - target: {fileID: 5864454614258896301, guid: 6cd0ff4af3adafa4daf607cbaae458b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c49aa059ef881946acc2f6f0e1c8fc5, type: 2}
     - target: {fileID: 5864454614258896302, guid: 6cd0ff4af3adafa4daf607cbaae458b0, type: 3}
       propertyPath: momentum.z
       value: -10
@@ -1184,6 +1188,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1921670711}
     m_Modifications:
+    - target: {fileID: 5864454614258896301, guid: 6cd0ff4af3adafa4daf607cbaae458b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c49aa059ef881946acc2f6f0e1c8fc5, type: 2}
     - target: {fileID: 5864454614258896302, guid: 6cd0ff4af3adafa4daf607cbaae458b0, type: 3}
       propertyPath: momentum.z
       value: 10

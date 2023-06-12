@@ -5,6 +5,8 @@ using UnityEngine;
 public class storedMovement : MonoBehaviour
 {
     public Vector3 momentum;
+    [HideInInspector]
+    public Vector3 oldMomentum;
 
     private float indicatorDistance = 8;
     private GameObject momentumIndicatorPrefab;
@@ -17,6 +19,8 @@ public class storedMovement : MonoBehaviour
     private Outline outlineObject;
     private Renderer objRenderer;
 
+    private Object previousCollision;
+
     private AudioSource audioSource;
     private AudioClip whoosh;
     private AudioClip reverseWhoosh;
@@ -26,7 +30,7 @@ public class storedMovement : MonoBehaviour
     {
         frozenMaterial = Resources.Load("Materials/DebugFrozen", typeof(Material)) as Material;
         movingMaterial = Resources.Load("Materials/DebugMoving", typeof(Material)) as Material;
-        momentumIndicatorPrefab = Resources.Load("Models/arrow", typeof(GameObject)) as GameObject;
+        momentumIndicatorPrefab = Resources.Load("Prefabs/arrow", typeof(GameObject)) as GameObject;
         whoosh = Resources.Load("Multimedia_sound/whoosh", typeof(AudioClip)) as AudioClip;
         reverseWhoosh = Resources.Load("Multimedia_sound/reverse_whoosh", typeof(AudioClip)) as AudioClip;
 
@@ -34,6 +38,9 @@ public class storedMovement : MonoBehaviour
         objRenderer.material = frozenMaterial;
 
         rb = GetComponent<Rigidbody>();
+
+        oldMomentum = momentum;
+
         // Create Outline and disable it until needed
         outlineObject = gameObject.AddComponent<Outline>();
         outlineObject.OutlineMode = Outline.Mode.OutlineAll;
@@ -44,11 +51,25 @@ public class storedMovement : MonoBehaviour
         audioSource = GetComponentInChildren<AudioSource>();
     }
 
+    private void Update() {
+        if (momentum!=oldMomentum) {
+            oldMomentum = momentum;
+        }
+    }
+
     private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.CompareTag("interactable")) {
+            if (previousCollision == collision.gameObject) {
+                return;
+            } else {
+                previousCollision = collision.gameObject;
+            }
+        }
+
         // Collision with other cube
-        // TODO: transfere momentum to other cube maybe
         if (collision.gameObject.CompareTag("interactable")) {
             freeze();
+            momentum += collision.gameObject.GetComponent<storedMovement>().oldMomentum;
         }
 
         // Collision with wall, wall absorbs all momentum

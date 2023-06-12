@@ -44,7 +44,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 04ee4d36570ebfe4b9c937db19de1528, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.524
+  m_Volume: 0.054
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -256,4 +256,4 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 1
+  m_CollisionDetection: 3

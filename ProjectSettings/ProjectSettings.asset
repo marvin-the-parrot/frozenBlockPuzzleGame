@@ -707,11 +707,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: b5270b70-dd2a-49e8-a14b-93919c6c4663
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: UnititledProject
+  organizationId: bjamer
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

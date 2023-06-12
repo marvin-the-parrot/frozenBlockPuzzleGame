@@ -6,6 +6,10 @@ public class storedMovement : MonoBehaviour
 {
     public Vector3 momentum;
 
+    private float indicatorDistance = 8;
+    private GameObject momentumIndicatorPrefab;
+    private GameObject momentumIndicator;
+
     private Material frozenMaterial;
     private Material movingMaterial;
 
@@ -18,6 +22,8 @@ public class storedMovement : MonoBehaviour
     {
         frozenMaterial = Resources.Load("Materials/DebugFrozen", typeof(Material)) as Material;
         movingMaterial = Resources.Load("Materials/DebugMoving", typeof(Material)) as Material;
+        momentumIndicatorPrefab = Resources.Load("Models/arrow", typeof(GameObject)) as GameObject;
+
         objRenderer = gameObject.GetComponent<Renderer>();
         objRenderer.material = frozenMaterial;
 
@@ -48,6 +54,29 @@ public class storedMovement : MonoBehaviour
         }
     }
 
+    private void showMomentumIndicator() {
+        if (momentum==Vector3.zero) {
+            return;
+        }
+
+        if (momentumIndicator!=null) {
+            return;
+        }
+        Vector3 position = gameObject.transform.position;
+
+        position.x = momentum.normalized.x;
+        position.y = momentum.normalized.y;
+        position.z = momentum.normalized.z;
+
+        position *= indicatorDistance;
+        position = gameObject.transform.position + position;
+        momentumIndicator = Instantiate(momentumIndicatorPrefab, position, Quaternion.LookRotation(momentum.normalized),gameObject.transform);
+    }
+
+    private void destroyMomentumIndicator() {
+        Destroy(momentumIndicator);
+    }
+
     public void freeze() {
         rb.isKinematic = true;
         rb.velocity = Vector3.zero;
@@ -56,6 +85,7 @@ public class storedMovement : MonoBehaviour
     }
 
     public void unfreeze() {
+        destroyMomentumIndicator();
         rb.isKinematic = false;
         rb.velocity = momentum;
         objRenderer.material = movingMaterial;
@@ -63,7 +93,15 @@ public class storedMovement : MonoBehaviour
     }
 
     public void outline() {
-        outlineObject.enabled = true; 
+        outlineObject.enabled = true;
+        showMomentumIndicator();
+    }
+
+    public void removeOutline() {
+        if (outlineObject != null) {
+            outlineObject.enabled = false;
+        }
+        destroyMomentumIndicator();
     }
 }
 

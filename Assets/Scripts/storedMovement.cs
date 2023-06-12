@@ -86,6 +86,9 @@ public class storedMovement : MonoBehaviour
     }
 
     public void freeze() {
+        if (rb.velocity==Vector3.zero) {
+            return;
+        }
         rb.isKinematic = true;
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
@@ -93,6 +96,7 @@ public class storedMovement : MonoBehaviour
 
         audioSource.clip = reverseWhoosh;
         audioSource.Play();
+
     }
 
     public void unfreeze() {

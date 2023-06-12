@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - interactable
+  - Ground
+  - Wall
+  - New tag
+  - Character
   layers:
   - Default
   - TransparentFX

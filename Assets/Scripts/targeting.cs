@@ -27,37 +27,28 @@ public class targeting : MonoBehaviour
 
             if (hitObject.CompareTag("interactable")) {
                 if (hitObject != outlinedObject) {
+                    // new object
                     if (outlinedObject != null) {
-                        Outline outlinedObjectOutline = outlinedObject.GetComponent<Outline>();
-                        if (outlinedObjectOutline != null) {
-                            outlinedObjectOutline.enabled = false;
-                        }
-                    }
-
-                    Outline hitObjectOutline = hitObject.GetComponent<Outline>();
-                    if (hitObjectOutline != null) {
-                        hitObjectOutline.enabled = true;
-                    }
-
+                        // remove old outline if it exists
+                        ExecuteFunctionOnGameObject(outlinedObject, "removeOutline");
+                    } 
+                    // add new outline
                     outlinedObject = hitObject;
-                    ExecuteFunctionOnGameObject(hitObject, "outline");
+                    ExecuteFunctionOnGameObject(hitObject, "outline");  
                 }
 
                 if (Input.GetButtonDown("Fire1")) {
                     ExecuteFunctionOnGameObject(hitObject, "unfreeze");
                 }
-            }
-        } else {
-            if (outlinedObject != null) {
-                Outline outlinedObjectOutline = outlinedObject.GetComponent<Outline>();
-                if (outlinedObjectOutline != null) {
-                    outlinedObjectOutline.enabled = false;
+            } else {
+                if (outlinedObject != null) {
+                    ExecuteFunctionOnGameObject(outlinedObject, "removeOutline");
+                    outlinedObject = null;
                 }
-                outlinedObject = null;
-            }
 
-            Debug.Log("Did not Hit");
-        }
+                Debug.Log("Did not Hit");
+            }
+        } 
     }
 
     public void ExecuteFunctionOnGameObject(GameObject targetObject,string functionName) {

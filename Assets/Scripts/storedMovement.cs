@@ -17,12 +17,18 @@ public class storedMovement : MonoBehaviour
     private Outline outlineObject;
     private Renderer objRenderer;
 
+    private AudioSource audioSource;
+    private AudioClip whoosh;
+    private AudioClip reverseWhoosh;
+
     // Start is called before the first frame update
     void Start()
     {
         frozenMaterial = Resources.Load("Materials/DebugFrozen", typeof(Material)) as Material;
         movingMaterial = Resources.Load("Materials/DebugMoving", typeof(Material)) as Material;
         momentumIndicatorPrefab = Resources.Load("Models/arrow", typeof(GameObject)) as GameObject;
+        whoosh = Resources.Load("Multimedia_sound/whoosh", typeof(AudioClip)) as AudioClip;
+        reverseWhoosh = Resources.Load("Multimedia_sound/reverse_whoosh", typeof(AudioClip)) as AudioClip;
 
         objRenderer = gameObject.GetComponent<Renderer>();
         objRenderer.material = frozenMaterial;
@@ -34,6 +40,8 @@ public class storedMovement : MonoBehaviour
         outlineObject.OutlineColor = Color.yellow;
         outlineObject.OutlineWidth = 5f;
         outlineObject.enabled = false;
+
+        audioSource = GetComponentInChildren<AudioSource>();
     }
 
     private void OnCollisionEnter(Collision collision) {
@@ -82,13 +90,24 @@ public class storedMovement : MonoBehaviour
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         objRenderer.material = frozenMaterial;
+
+        audioSource.clip = reverseWhoosh;
+        audioSource.Play();
     }
 
     public void unfreeze() {
+        if (momentum== Vector3.zero) {
+            return;
+        }
+
         destroyMomentumIndicator();
         rb.isKinematic = false;
         rb.velocity = momentum;
         objRenderer.material = movingMaterial;
+
+        audioSource.clip = whoosh;
+        audioSource.Play();
+        
 
     }
 

@@ -2832,6 +2832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c0fa7e580189e498f9c007c66c0df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterMixer: {fileID: 24100000, guid: 5d758c892b1ee4a4a9cfe8abff1080af, type: 2}
 --- !u!1001 &1012430748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5418,9 +5419,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  rotationSpeed: 10
+  sensitivity: {x: 10, y: 2}
   gravityScale: 5
   jumpForce: 300
+  speed: 1
+  followTransform: {fileID: 378192423}
 --- !u!136 &1680594481
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5611,7 +5614,7 @@ AudioSource:
   m_GameObject: {fileID: 1804736666}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 5d758c892b1ee4a4a9cfe8abff1080af, type: 2}
   m_audioClip: {fileID: 8300000, guid: f9897685b8d399b41bb6a859d309b369, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.3

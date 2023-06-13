@@ -10,16 +10,17 @@ public class MyUIController : MonoBehaviour
     public Button ResumeButton;
     public Button RestartButton;
     public Button ExitButton;
-    public Slider VolumeSlider;
+    public SliderInt VolumeSlider;
     public VisualElement root;
     [SerializeField] AudioMixer masterMixer;
 
+
     void Start() 
     {
-        var root = GetComponent<UIDocument>().rootVisualElement;
+        root = GetComponent<UIDocument>().rootVisualElement;
         root.visible = false;
 
-        VolumeSlider = root.Q<Slider>("VolumeSlider");
+        VolumeSlider = root.Q<SliderInt>("VolumeSlider");
         SetVolume(PlayerPrefs.GetInt("SavedMasterVolume", 100));
     }
 
@@ -34,7 +35,6 @@ public class MyUIController : MonoBehaviour
 
     void CallMenu()
     {
-        var root = GetComponent<UIDocument>().rootVisualElement;
         root.visible = true;
 
         ResumeButton = root.Q<Button>("ResumeButton");
@@ -48,7 +48,6 @@ public class MyUIController : MonoBehaviour
 
     void ResumeButtonPressed()
     {
-        var root = GetComponent<UIDocument>().rootVisualElement;
         root.visible = false;
     }
 
@@ -74,9 +73,8 @@ public class MyUIController : MonoBehaviour
         SetVolume(VolumeSlider.value);
     }
 
-    void RefreshSlider(float _value)
-    {
-        VolumeSlider = root.Q<Slider>("VolumeSlider");
-        VolumeSlider.value = _value;
+    void RefreshSlider(float _value) { 
+        VolumeSlider = root.Q<SliderInt>("VolumeSlider");
+        VolumeSlider.value = (int)_value;
     }
 }

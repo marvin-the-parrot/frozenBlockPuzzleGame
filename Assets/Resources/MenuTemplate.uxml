@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI/ButtonStyle.uss?fileID=7433441132597879392&amp;guid=2a2246434e5e03f46a88faf4077da805&amp;type=3#ButtonStyle" />
-    <ui:VisualElement style="width: 1126px; height: 559px; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.51);">
+    <ui:VisualElement style="width: 1126px; height: 559px; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.71);">
         <ui:VisualElement style="height: 480px; width: 444px; background-color: rgba(255, 255, 255, 0); -unity-background-image-tint-color: rgba(255, 255, 255, 0); align-items: center; justify-content: center; position: relative;">
             <ui:Button text="Resume" display-tooltip-when-elided="true" name="ResumeButton" class="ButtonStyle" style="margin-top: 5px; margin-bottom: 5px; transition-duration: 0s; transition-timing-function: ease;" />
             <ui:Button text="Restart" display-tooltip-when-elided="true" name="RestartButton" class="ButtonStyle" style="margin-top: 5px; margin-bottom: 5px; transition-duration: 0s; transition-timing-function: ease;" />

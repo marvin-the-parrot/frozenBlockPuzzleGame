@@ -997,7 +997,7 @@ Camera:
   m_FOVAxisMode: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
+  m_FocalLength: 20.78461
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1406,6 +1406,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cd0ff4af3adafa4daf607cbaae458b0, type: 3}
+--- !u!1 &1476189919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 263549356421008734, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
+  m_PrefabInstance: {fileID: 263549357225677079}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1514054304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2126,6 +2131,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 263549356421008733, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 263549356421008733, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 263549356421008733, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 263549356421008733, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 263549356421008733, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 263549356421008733, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 263549356421008733, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 263549357164593427, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
+      propertyPath: sensitivity.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 263549357164593427, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
+      propertyPath: sensitivity.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 263549357164593427, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
+      propertyPath: followTransform
+      value: 
+      objectReference: {fileID: 1476189919}
     - target: {fileID: 263549357164593429, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
       propertyPath: m_RootOrder
       value: 5

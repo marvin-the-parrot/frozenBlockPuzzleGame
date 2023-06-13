@@ -2803,7 +2803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: a5ef9825aab8a2d4885f35d4189635c7, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: ad0496b07a0eab241a6343097c7d6d00, type: 3}
   m_SortingOrder: 0
 --- !u!4 &999845797
 Transform:
@@ -6255,7 +6255,7 @@ GameObject:
   - component: {fileID: 2067857684}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

@@ -27,12 +27,12 @@ public class MyUIController : MonoBehaviour
 
     void ResumeButtonPressed()
     {
-        SceneManager.LoadScene("Forrest");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void RestartButtonPressed()
     {
-        SceneManager.LoadScene("TestingScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void ExitButtonPressed()

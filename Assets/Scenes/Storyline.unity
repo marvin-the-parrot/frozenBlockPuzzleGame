@@ -678,24 +678,24 @@ MonoBehaviour:
   textDisplay: {fileID: 1046234829}
   sentences:
   - "Once upon a time, in a little land called Ostria, there was a smart sorcerer\u2018s
-    apprentice called Axon and his master Crofeus."
+    apprentice called Elysia and her master Crofeus."
   - They spent every day making potions, casting spells and researching every little
     bit about magic and its effects on the world.
   - "Until that one night, where everything changed\u2026"
-  - Axon woke up from his sleep, because he heard noises from the laboratory. He
-    stood up and went to the other room, where he found Crofeus mumbling some weird
-    spells he never heard before.
-  - "The apprentice noticed the old book from which his master was reciting, it was
+  - Elysia woke up from her sleep, because she heard noises from the laboratory.
+    She stood up and went to the other room, where she found Crofeus mumbling some
+    weird spells she never heard before.
+  - "The apprentice noticed the old book from which her master was reciting, it was
     the collection of the darkest spells a sorcerer could cast. From Crofeus\u2018
     hands dripped a green liquid."
-  - 'Axon knew that green potion, it was their latest experiment, not yet finished,
-    but he knew it could turn people mad. '
+  - 'Elysia knew that green potion, it was their latest experiment, not yet finished,
+    but she knew it could turn people mad. '
   - "Crofeus\u2018 mumbling suddenly stopped and he screamed: \u201EIT\u2018S DONE,
     I WILL FREEZE EVERYTHING IN TIME!!!\u201C "
-  - Axon immediately casted a protection spell on himself and ran out of the house,
-    caught in the blast his spell protected him but also somehow duplicated him.
-  - "The apprentice knew he had to find the Altar of the Sorcerer in the Woods and
-    free the world from this freezing spell\u2026"
+  - Elysia immediately casted a protection spell on herself and ran out of the house,
+    caught in the blast her spell protected her but also somehow duplicated her.
+  - "The apprentice knew she had to find the Altar of the Sorcerer in the woods and
+    free Ostria from this freezing spell\u2026"
   typingSpeed: 0.02
   continueButton: {fileID: 523158862}
 --- !u!4 &1319876912

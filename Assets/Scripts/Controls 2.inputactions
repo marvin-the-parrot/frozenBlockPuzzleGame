@@ -1,23 +1,23 @@
 {
-    "name": "Controls",
+    "name": "Controls 2",
     "maps": [
         {
-            "name": "Player 1",
-            "id": "597539c9-e1ab-4591-bcda-59ab5911caa4",
+            "name": "Player 2",
+            "id": "c02e7b3d-0760-480b-b421-0e08d841b973",
             "actions": [
                 {
                     "name": "Jump",
                     "type": "Button",
-                    "id": "c5388c6c-fafb-4e89-89b1-9f1dca5bf166",
+                    "id": "2e3c7045-cf3f-422b-a758-4fc035612b76",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
                     "name": "Move",
                     "type": "Value",
-                    "id": "84c1f99e-91fe-4c25-858e-2bc81fb53944",
+                    "id": "7e27f21c-0379-4aca-a587-b87862da4a02",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -26,7 +26,7 @@
                 {
                     "name": "Look",
                     "type": "Value",
-                    "id": "fbc176b9-1434-4f32-b6b6-125bc1017fa6",
+                    "id": "ce923469-88a6-4d79-906c-3778c4ae5d19",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -35,7 +35,7 @@
                 {
                     "name": "Interact",
                     "type": "Button",
-                    "id": "5921f997-f881-4ed7-9ff6-8fc1c7ea4998",
+                    "id": "1e9a09ba-dc67-4171-b603-940ff46f7b19",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -45,88 +45,44 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "060a004c-a741-4f38-b67e-705c40f77a6b",
-                    "path": "<Keyboard>/space",
+                    "id": "3cf5a4ed-f623-4bd0-ba30-1e5f19ce2fae",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard and Mouse",
+                    "groups": "Gamepad",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "2D Vector",
-                    "id": "86cbef0b-6468-4a4d-b139-3dcc9bed0111",
-                    "path": "2DVector",
+                    "name": "",
+                    "id": "0855cb4b-95ff-4cff-8e68-d972fce0e7f4",
+                    "path": "<Gamepad>/leftStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Gamepad",
                     "action": "Move",
-                    "isComposite": true,
+                    "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
-                    "id": "e39778e8-0958-4eea-8e21-9dccd9f55c2b",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard and Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "9f5f961c-4970-4588-b28e-5b377b26b8fc",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard and Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "e0f81462-8498-4cdd-8b06-9871472ad322",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard and Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "4dc8aadc-994f-482d-b321-2739056c1453",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard and Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "",
-                    "id": "6642d532-4e51-4da0-804e-b62a437e5dfe",
-                    "path": "<Mouse>/delta",
+                    "id": "f32db1f4-4340-4de5-b55b-ab25a24d4f1d",
+                    "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard and Mouse",
+                    "groups": "Gamepad",
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "c704702f-b998-4bb1-9850-55f4da4ab21d",
-                    "path": "<Mouse>/leftButton",
+                    "id": "c2b9be3c-bc22-48bc-a50f-85a04ed064e9",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard and Mouse",
+                    "groups": "Gamepad",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false

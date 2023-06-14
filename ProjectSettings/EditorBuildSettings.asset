@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Storyline.unity
     guid: a91afff046ace1d4c959de1900d9d63d
   - enabled: 1
-    path: Assets/Scenes/Forrest.unity
+    path: Assets/Scenes/Forest.unity
     guid: 2ac7709ac89f80146a7f7c95c06645fb
   m_configObjects: {}

@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
-public class MyUIController : MonoBehaviour
+public class UIMenuController : MonoBehaviour
 {
     public Button ResumeButton;
     public Button RestartButton;

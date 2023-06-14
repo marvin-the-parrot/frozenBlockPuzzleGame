@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class targeting : MonoBehaviour
 {
-
+    public Camera playerCamera;
     private GameObject outlinedObject;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,6 @@ public class targeting : MonoBehaviour
         float rayLength = 1000f;
 
         RaycastHit hit;
-        Camera playerCamera = Camera.main;
         Ray pointerRay = playerCamera.ScreenPointToRay(new Vector3((playerCamera.pixelWidth-1)/2,(playerCamera.pixelHeight-1)/2,0f));
         Debug.DrawRay(pointerRay.origin, pointerRay.direction * rayLength, Color.red);
 

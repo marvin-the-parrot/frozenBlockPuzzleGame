@@ -4,6 +4,8 @@ using UnityEngine;
 
 
 public class playerController : MonoBehaviour {
+
+    public int playerNumber;
     public float moveSpeed = 5f;        // Player movement speed
     public Vector2 sensitivity = new Vector2(10f,2f);
 
@@ -27,22 +29,36 @@ public class playerController : MonoBehaviour {
     }
 
     private void Update() {
+        float moveZ = 0;
+        float moveY = 0;
+        if (playerNumber==1) {
+            // Read input
+            moveZ = Input.GetAxis("Vertical");
+            moveY = Input.GetAxis("Horizontal");
+            float mouseX = Input.GetAxis("Mouse X");
+            float mouseY = Input.GetAxis("Mouse Y");
 
-        // Read input
-        float moveZ = Input.GetAxis("Vertical");
-        float moveY = Input.GetAxis("Horizontal");
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
+            if (Input.GetButtonDown("Jump") && !isJumping) {
+                Jump();
+            }
 
-        if (Input.GetButtonDown("Jump") && !isJumping) {
-            Jump();
+            // Calculate movement input
+            
+
+            lookX = mouseX;
+            lookY = mouseY;
         }
 
-        // Calculate movement input
+        if (playerNumber==2) {
+            moveZ = 0;
+            moveY = 0;
+            float mouseX = 0;
+            float mouseY = 0;
+        }
+
         movementInput = new Vector3(moveY, 0f, moveZ);
 
-        lookX = mouseX;
-        lookY = mouseY;
+
     }
 
     private void Jump() {

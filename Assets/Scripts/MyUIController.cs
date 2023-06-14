@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MyUIController : MonoBehaviour
 {
@@ -10,16 +11,37 @@ public class MyUIController : MonoBehaviour
     public Button RestartButton;
     public Button ExitButton;
     public Slider VolumeSlider;
+    public VisualElement root;
+    [SerializeField] AudioMixer masterMixer;
 
-    void Start()
+
+    void Start() 
     {
-        var root = GetComponent<UIDocument>().rootVisualElement;
+        root = GetComponent<UIDocument>().rootVisualElement;
+        root.visible = false;
+
+        VolumeSlider = root.Q<Slider>("VolumeSlider");
+        SetVolume(PlayerPrefs.GetFloat("SavedMasterVolume", 50));
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            CallMenu();
+        }
+
+        SetVolumeFromSlider();
+    }
+
+    void CallMenu()
+    {
+        root.visible = true;
 
         ResumeButton = root.Q<Button>("ResumeButton");
         RestartButton = root.Q<Button>("RestartButton");
         ExitButton = root.Q<Button>("ExitButton");
-        VolumeSlider = root.Q<Slider>("VolumeSlider");
-
+        
         ResumeButton.clicked += ResumeButtonPressed;
         RestartButton.clicked += RestartButtonPressed;
         ExitButton.clicked += ExitButtonPressed;
@@ -27,7 +49,7 @@ public class MyUIController : MonoBehaviour
 
     void ResumeButtonPressed()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        root.visible = false;
     }
 
     void RestartButtonPressed()
@@ -38,5 +60,31 @@ public class MyUIController : MonoBehaviour
     void ExitButtonPressed()
     {
         Application.Quit();
+    }
+
+    void SetVolume(float _value)
+    {
+        RefreshSlider(_value);
+        PlayerPrefs.SetFloat("SavedMasterVolume", _value);
+        if (_value == 0)
+        {
+            masterMixer.SetFloat("MasterVolume", 0.001f);
+        }
+        else
+        {
+            masterMixer.SetFloat("MasterVolume", Mathf.Log10(_value / 100) * 20);
+        }
+        
+    }
+
+     void SetVolumeFromSlider()
+    {
+        SetVolume(VolumeSlider.value);
+    }
+
+    void RefreshSlider(float _value) 
+    { 
+        VolumeSlider = root.Q<Slider>("VolumeSlider");
+        VolumeSlider.value = _value;
     }
 }

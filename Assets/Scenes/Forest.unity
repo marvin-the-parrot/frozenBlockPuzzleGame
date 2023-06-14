@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1270227865}
-  m_IndirectSpecularColor: {r: 0.11265875, g: 0.2814317, b: 0.708685, a: 1}
+  m_IndirectSpecularColor: {r: 0.11269495, g: 0.28146937, b: 0.7086804, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 99886dca781b63148ba461343f6d7b29, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: e3baa4fe868063042bd1b7c85cf92393, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 00e521b33c68d974f9fe7cead7b1ff86, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -2832,6 +2832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c0fa7e580189e498f9c007c66c0df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterMixer: {fileID: 24100000, guid: 5d758c892b1ee4a4a9cfe8abff1080af, type: 2}
 --- !u!1001 &1012430748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5422,7 +5423,7 @@ MonoBehaviour:
   gravityScale: 5
   jumpForce: 300
   speed: 1
-  followTransform: {fileID: 0}
+  followTransform: {fileID: 378192423}
 --- !u!136 &1680594481
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5613,7 +5614,7 @@ AudioSource:
   m_GameObject: {fileID: 1804736666}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 5d758c892b1ee4a4a9cfe8abff1080af, type: 2}
   m_audioClip: {fileID: 8300000, guid: f9897685b8d399b41bb6a859d309b369, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.3

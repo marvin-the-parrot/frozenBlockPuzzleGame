@@ -12,8 +12,8 @@ public class storedMovement : MonoBehaviour
     private GameObject momentumIndicatorPrefab;
     private GameObject momentumIndicator;
 
-    private Material frozenMaterial;
-    private Material movingMaterial;
+    public Material frozenMaterial;
+    public Material movingMaterial;
 
     private Rigidbody rb;
     private Outline outlineObject;
@@ -28,8 +28,11 @@ public class storedMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        frozenMaterial = Resources.Load("Materials/DebugFrozen", typeof(Material)) as Material;
-        movingMaterial = Resources.Load("Materials/DebugMoving", typeof(Material)) as Material;
+        if (frozenMaterial == null) {
+            frozenMaterial = Resources.Load("Materials/DebugFrozen", typeof(Material)) as Material;
+            movingMaterial = Resources.Load("Materials/DebugMoving", typeof(Material)) as Material;
+        }
+
         momentumIndicatorPrefab = Resources.Load("Prefabs/arrow", typeof(GameObject)) as GameObject;
         whoosh = Resources.Load("Multimedia_sound/whoosh", typeof(AudioClip)) as AudioClip;
         reverseWhoosh = Resources.Load("Multimedia_sound/reverse_whoosh", typeof(AudioClip)) as AudioClip;

@@ -1728,10 +1728,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1921670711}
     m_Modifications:
+    - target: {fileID: 5864454614258896301, guid: 6cd0ff4af3adafa4daf607cbaae458b0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0b45d44cf69a6a4a9827b51251d0cbc, type: 2}
     - target: {fileID: 5864454614258896302, guid: 6cd0ff4af3adafa4daf607cbaae458b0, type: 3}
       propertyPath: momentum.z
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 5864454614258896302, guid: 6cd0ff4af3adafa4daf607cbaae458b0, type: 3}
+      propertyPath: frozenMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: b0b45d44cf69a6a4a9827b51251d0cbc, type: 2}
+    - target: {fileID: 5864454614258896302, guid: 6cd0ff4af3adafa4daf607cbaae458b0, type: 3}
+      propertyPath: movingMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: b45a15fff385e4a46ab2bf7a9b0214e8, type: 2}
     - target: {fileID: 5864454614258896303, guid: 6cd0ff4af3adafa4daf607cbaae458b0, type: 3}
       propertyPath: m_RootOrder
       value: 2

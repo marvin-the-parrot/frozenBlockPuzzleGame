@@ -76,6 +76,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Follow Target 1
       objectReference: {fileID: 0}
+    - target: {fileID: 263549357164593427, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
+      propertyPath: actions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 3cb228f7cde8f8c4795dbbe5dae82666, type: 3}
+    - target: {fileID: 263549357164593427, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
+      propertyPath: playerNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 263549357164593427, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
+      propertyPath: sensitivity.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 263549357164593427, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
+      propertyPath: sensitivity.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 263549357164593429, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -239,6 +255,10 @@ PrefabInstance:
       value: Follow Target 2
       objectReference: {fileID: 0}
     - target: {fileID: 263549357164593427, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
+      propertyPath: actions
+      value: 
+      objectReference: {fileID: -944628639613478452, guid: 402527938b78ee748b2b779c1ebac037, type: 3}
+    - target: {fileID: 263549357164593427, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
       propertyPath: playerNumber
       value: 2
       objectReference: {fileID: 0}
@@ -306,7 +326,8 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1151710151322694781}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 963194226, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e72106e83a8eb9d4d850077ac7fe2b87, type: 3}
 --- !u!4 &888303113183811611 stripped
 Transform:

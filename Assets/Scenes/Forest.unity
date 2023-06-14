@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 164093433}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6919,7 +6919,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 601878564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 121.02114, y: 1.0018001, z: 129.97894}
+  m_LocalPosition: {x: 122.95, y: 1.0018001, z: 130.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7428,6 +7428,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ca12913547055aa4180765d489dc197c, type: 3}
       propertyPath: m_Name
       value: model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ca12913547055aa4180765d489dc197c, type: 3}
+      propertyPath: m_TagString
+      value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: ca12913547055aa4180765d489dc197c, type: 3}
+      propertyPath: m_TagString
+      value: Character
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca12913547055aa4180765d489dc197c, type: 3}
@@ -10161,6 +10169,19 @@ CapsuleCollider:
   m_Height: 2.111266
   m_Direction: 1
   m_Center: {x: 0.03291121, y: 0.084756844, z: 0.047652487}
+--- !u!114 &1593559596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593559594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0bc162b063ee44681df112651459cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextLevelName: TestingScene
 --- !u!4 &1613159879 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 71494349c5cb83c4289562d61570ad72, type: 3}

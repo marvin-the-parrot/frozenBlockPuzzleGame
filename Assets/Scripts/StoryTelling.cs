@@ -46,7 +46,7 @@ public class StoryTelling : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("Forrest");
+            SceneManager.LoadScene("Forest");
         }
     }
 }

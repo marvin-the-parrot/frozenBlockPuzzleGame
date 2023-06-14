@@ -14,11 +14,11 @@ public class UIMenuController : MonoBehaviour
     public VisualElement root;
     [SerializeField] AudioMixer masterMixer;
 
-
-    void Start() 
+    void Start()
     {
         root = GetComponent<UIDocument>().rootVisualElement;
         root.visible = false;
+
 
         VolumeSlider = root.Q<Slider>("VolumeSlider");
         SetVolume(PlayerPrefs.GetFloat("SavedMasterVolume", 50));

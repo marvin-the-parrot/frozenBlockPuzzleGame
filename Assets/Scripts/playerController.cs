@@ -30,7 +30,7 @@ public class playerController : MonoBehaviour {
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
-
+        DontDestroyOnLoad(rb);
         if (playerNumber==1) {
             actionMap = actions.FindActionMap("Player 1");
         } else if(playerNumber == 2) {
@@ -48,12 +48,17 @@ public class playerController : MonoBehaviour {
     }
 
     private void Update() {
-        
+        if (rb==null) {
+            rb = GetComponent<Rigidbody>();
+        }
 
     }
 
 
     private void Jump() {
+        if (rb==null) {
+            return;
+        }
         if (!isJumping) {
             rb.velocity = Vector3.zero;
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);

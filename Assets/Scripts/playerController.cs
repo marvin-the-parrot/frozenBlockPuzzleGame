@@ -48,13 +48,7 @@ public class playerController : MonoBehaviour {
     }
 
     private void Update() {
-        Vector2 movement = moveAction.ReadValue<Vector2>();
-        Vector2 look = lookAction.ReadValue<Vector2>();
-        Debug.Log(look);
-        lookX = look.x;
-        lookY = look.y;
-
-        movementInput = new Vector3(movement.x, 0f,movement.y);
+        
 
     }
 
@@ -74,6 +68,14 @@ public class playerController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
+        Vector2 movement = moveAction.ReadValue<Vector2>();
+        Vector2 look = lookAction.ReadValue<Vector2>();
+        Debug.Log(look);
+        lookX = look.x;
+        lookY = look.y;
+
+        movementInput = new Vector3(movement.x, 0f, movement.y);
+
         rb.AddForce(Physics.gravity * gravityScale, ForceMode.Acceleration);
         // Move the player
         MovePlayer();

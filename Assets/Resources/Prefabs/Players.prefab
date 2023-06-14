@@ -3320,7 +3320,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249172390359079773}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6600002, y: 1.084, z: -3.4700007}
+  m_LocalPosition: {x: 0.6600002, y: 1.084, z: -3.4699996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3946,7 +3946,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249172390549620490}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.65999997, y: 1.084, z: -3.4700007}
+  m_LocalPosition: {x: 0.65999997, y: 1.084, z: -3.4699996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5085,7 +5085,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249172391017049030}
   m_LocalRotation: {x: -0.18584609, y: 0.09426884, z: -0.017915724, w: -0.9778822}
-  m_LocalPosition: {x: 0.65999997, y: 1.084, z: -3.4700007}
+  m_LocalPosition: {x: 0.65999997, y: 1.084, z: -3.4699996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5319,7 +5319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 1
   moveSpeed: 10
-  sensitivity: {x: 1, y: 1}
+  sensitivity: {x: 0.1, y: 0.2}
   gravityScale: 5
   jumpForce: 3
   speed: 1
@@ -6958,7 +6958,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249172391504815896}
   m_LocalRotation: {x: -0.18584609, y: 0.09426884, z: -0.017915724, w: -0.9778822}
-  m_LocalPosition: {x: 0.6600002, y: 1.084, z: -3.4700007}
+  m_LocalPosition: {x: 0.6600002, y: 1.084, z: -3.4699996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

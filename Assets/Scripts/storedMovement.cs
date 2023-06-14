@@ -110,7 +110,7 @@ public class storedMovement : MonoBehaviour
     }
 
     public void freeze() {
-        if (rb.velocity==Vector3.zero) {
+        if (rb.isKinematic==true) {
             return;
         }
         rb.isKinematic = true;

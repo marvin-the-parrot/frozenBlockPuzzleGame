@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -549,26 +549,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 1046234829}
   sentences:
-  - "Once upon a time, in a little land called Ostria, there were a smart sorcerer\u2018s
+  - "Once upon a time, in a little land called Ostria, there was a smart sorcerer\u2018s
     apprentice called Axon and his master Crofeus."
-  - They spent every day making positions, casting spells and researching every little
+  - They spent every day making potions, casting spells and researching every little
     bit about magic and its effects on the world.
   - "Until that one night, where everything changed\u2026"
-  - Axon woke up from his sleep, because he heard some noises from the laboratory.
-    He stood up and went to the other room, where he found Crofeus mumbling some
-    weird spells he never heard before.
+  - Axon woke up from his sleep, because he heard noises from the laboratory. He
+    stood up and went to the other room, where he found Crofeus mumbling some weird
+    spells he never heard before.
   - "The apprentice noticed the old book from which his master was reciting, it was
-    the collection of the darkest spells a sorcerer could cast and Crofeus\u2018
-    hands dropped a green liquid."
+    the collection of the darkest spells a sorcerer could cast. From Crofeus\u2018
+    hands dripped a green liquid."
   - 'Axon knew that green potion, it was their latest experiment, not yet finished,
-    but they knew it could turn people mad. '
+    but he knew it could turn people mad. '
   - "Crofeus\u2018 mumbling suddenly stopped and he screamed: \u201EIT\u2018S DONE,
-    I WILL FREEZE EVERYTHING!!!\u201C "
-  - Axon immediately casted a protection spell on himself and ran out of the house,
-    behind him an extremely bright light, which only appears when a strong dark spell
-    was casted.
-  - "The apprentice knew there was only one thing he could do to get his master back,
-    he had to find the Altar of the Sorcerers and fight the freezing spell\u2026"
+    I WILL FREEZE EVERYTHING IN TIME!!!\u201C "
+  - Axon immediately cast a protection spell on himself and ran out of the house,
+    caught in the blast his spell protected him but also somehow duplicated him.
+  - "The apprentice knew he had to find the Altar of the Sorcerer in the Woods and
+    free the world from this freezing spell\u2026"
   typingSpeed: 0.02
   continueButton: {fileID: 523158862}
 --- !u!4 &1319876912

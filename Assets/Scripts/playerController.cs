@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 
 public class playerController : MonoBehaviour {
 
@@ -23,48 +23,48 @@ public class playerController : MonoBehaviour {
     private float lookX;
     private float lookY;
 
+    public InputActionAsset actions;
+    private InputActionMap actionMap;
+    private InputAction moveAction;
+    private InputAction lookAction;
 
     private void Awake() {
         rb = GetComponent<Rigidbody>();
+
+        if (playerNumber==1) {
+            actionMap = actions.FindActionMap("Player 1");
+        } else if(playerNumber == 2) {
+            actionMap = actions.FindActionMap("Player 2");
+        }
+
+        moveAction = actionMap.FindAction("Move");
+        lookAction = actionMap.FindAction("Look");
+        actionMap.FindAction("Jump").performed += OnJump;
+        
+    }
+
+    public void OnJump(InputAction.CallbackContext context) {
+         Jump();
     }
 
     private void Update() {
-        float moveZ = 0;
-        float moveY = 0;
-        if (playerNumber==1) {
-            // Read input
-            moveZ = Input.GetAxis("Vertical");
-            moveY = Input.GetAxis("Horizontal");
-            float mouseX = Input.GetAxis("Mouse X");
-            float mouseY = Input.GetAxis("Mouse Y");
+        Vector2 movement = moveAction.ReadValue<Vector2>();
+        Vector2 look = lookAction.ReadValue<Vector2>();
+        Debug.Log(look);
+        lookX = look.x;
+        lookY = look.y;
 
-            if (Input.GetButtonDown("Jump") && !isJumping) {
-                Jump();
-            }
-
-            // Calculate movement input
-            
-
-            lookX = mouseX;
-            lookY = mouseY;
-        }
-
-        if (playerNumber==2) {
-            moveZ = 0;
-            moveY = 0;
-            float mouseX = 0;
-            float mouseY = 0;
-        }
-
-        movementInput = new Vector3(moveY, 0f, moveZ);
-
+        movementInput = new Vector3(movement.x, 0f,movement.y);
 
     }
 
+
     private void Jump() {
-        rb.velocity = Vector3.zero;
-        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        isJumping = true;
+        if (!isJumping) {
+            rb.velocity = Vector3.zero;
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isJumping = true;
+        }
     }
 
     private void OnCollisionEnter(Collision collision) {
@@ -98,5 +98,11 @@ public class playerController : MonoBehaviour {
         gameObject.transform.rotation *= rotation;
         followTransform.transform.rotation *= yaw;
 
+    }
+    void OnEnable() {
+        actionMap.Enable();
+    }
+    void OnDisable() {
+        actionMap.Disable();
     }
 }

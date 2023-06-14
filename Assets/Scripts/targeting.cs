@@ -1,15 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class targeting : MonoBehaviour
 {
     public Camera playerCamera;
     private GameObject outlinedObject;
+    private float playerNumber;
+
+    private InputActionAsset actions;
+    private InputActionMap actionMap;
+    private bool interactionPerformed;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        playerNumber = GetComponent<playerController>().playerNumber;
+        actions = GetComponent<playerController>().actions;
+
+        if (playerNumber == 1) {
+            actionMap = actions.FindActionMap("Player 1");
+        } else if (playerNumber == 2) {
+            actionMap = actions.FindActionMap("Player 2");
+        }
+
+        actionMap.FindAction("Interact").performed += ctx => interactionPerformed = true;
     }
 
     // Update is called once per frame
@@ -36,8 +51,9 @@ public class targeting : MonoBehaviour
                     ExecuteFunctionOnGameObject(hitObject, "outline");  
                 }
 
-                if (Input.GetButtonDown("Fire1")) {
+                if (interactionPerformed) {
                     ExecuteFunctionOnGameObject(hitObject, "unfreeze");
+                    interactionPerformed = false;
                 }
             } else {
                 if (outlinedObject != null) {
@@ -45,9 +61,15 @@ public class targeting : MonoBehaviour
                     outlinedObject = null;
                 }
 
-                Debug.Log("Did not Hit");
             }
         } 
+    }
+
+    void OnEnable() {
+        actionMap.Enable();
+    }
+    void OnDisable() {
+        actionMap.Disable();
     }
 
     public void ExecuteFunctionOnGameObject(GameObject targetObject,string functionName) {

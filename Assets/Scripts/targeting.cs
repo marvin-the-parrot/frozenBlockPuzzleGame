@@ -31,10 +31,15 @@ public class targeting : MonoBehaviour
     void Update()
     {
         float rayLength = 1000f;
+        Vector3 offset = Vector3.zero;
+        if (gameObject.name == "Player 2") {
+            offset = new Vector3(playerCamera.pixelWidth, 0f, 0f);
+        }
 
         RaycastHit hit;
-        Ray pointerRay = playerCamera.ScreenPointToRay(new Vector3((playerCamera.pixelWidth-1)/2,(playerCamera.pixelHeight-1)/2,0f));
+        Ray pointerRay = playerCamera.ScreenPointToRay(new Vector3(((playerCamera.pixelWidth-1) / 2) + offset.x, ((playerCamera.pixelHeight-1)/ 2) + offset.y, 0f));
         Debug.DrawRay(pointerRay.origin, pointerRay.direction * rayLength, Color.red);
+        Debug.Log(gameObject.name + " H" + playerCamera.pixelWidth + " W" + playerCamera.pixelHeight);
 
         if (Physics.Raycast(pointerRay, out hit, rayLength)) {
             GameObject hitObject = hit.collider.gameObject;
